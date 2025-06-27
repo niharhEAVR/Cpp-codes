@@ -201,3 +201,83 @@ That’s why in professional codebases, you'll often see:
 std::cout << "Hello";
 std::vector<int> myVec;
 ```
+
+
+---
+---
+
+
+### 🔹 `int firstNum {3};` – Explanation
+
+This is a **variable declaration with uniform initialization** (also called **brace initialization**) in C++.
+
+---
+
+### ✅ **Breakdown:**
+
+* `int` → data type (integer)
+* `firstNum` → variable name
+* `{3}` → value assigned using **brace initialization**
+
+---
+
+### 🔍 **What it does:**
+
+It creates an **integer variable** named `firstNum` and initializes it with the value `3`.
+
+This is the **modern C++ (C++11 and later)** way of initializing variables.
+It helps **avoid narrowing conversions** (like accidentally converting `3.7` to `3`).
+
+---
+
+### 🔄 Equivalent to:
+
+```cpp
+int firstNum = 3;  // Traditional initialization
+```
+
+✅ But using `{3}` is safer in many cases.
+
+
+---
+---
+
+### 🔹 Symbols `<<` and `>>` in C++ – Explained Simply
+
+These symbols **look the same** but have **different meanings** depending on **context**:
+
+---
+
+## 🟦 1. **In Input/Output (I/O)**
+
+### ✅ Used with `cin` and `cout`:
+
+| Symbol | Meaning                   | Example            |
+| ------ | ------------------------- | ------------------ |
+| `<<`   | Output/Insertion operator | `cout << "Hello";` |
+| `>>`   | Input/Extraction operator | `cin >> age;`      |
+
+#### 📌 Example:
+
+```cpp
+int age;
+cout << "Enter age: ";  // Displays message
+cin >> age;             // Takes input from user
+```
+
+---
+
+## 🟦 2. **As Bitwise Operators**
+
+| Symbol | Name        | Action                              |
+| ------ | ----------- | ----------------------------------- |
+| `<<`   | Left Shift  | Shifts bits to the left (×2 power)  |
+| `>>`   | Right Shift | Shifts bits to the right (÷2 power) |
+
+#### 📌 Example:
+
+```cpp
+int a = 5;         // binary: 00000101
+int b = a << 1;    // 00001010 → 10
+int c = a >> 1;    // 00000010 → 2
+```
