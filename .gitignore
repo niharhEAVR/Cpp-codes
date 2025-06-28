@@ -1,3 +1,9 @@
+.vscode/*
 *.exe
-.vscode
-tempCodeRunner.exe
+*vs*
+*Debug*
+*.pdb
+*.obj
+*.ilk
+tempCodeRunner.cpp
+demo.cpp
