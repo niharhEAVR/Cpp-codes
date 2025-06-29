@@ -77,41 +77,60 @@ int main()
     std::cout << max << std::endl;
 
     // loops
+    std::cout<<"------------------------For-Loop------------------------" << std::endl;
     int count{0};
-    for (unsigned int i{0}; i < 10; i++)
+    for (unsigned int i{0}; i < 8; i++)
     {
         count += i;
     }
     std::cout << "The value of count: " << count << std::endl;
-
+    
     // Use size_t : a representation of some unsigned int for positive numbers [sizes]
-    /*
-    for(size_t i{0} ; i < 10 ; ++i){
-        std::cout << i << " : I love C++" << std::endl;
+
+    count = 0;
+    for (size_t i{0}; i < 9; ++i)
+    {
+        count += i;
     }
-    std::cout << "Loop done!" << std::endl;
-    */
-    /*
-    //sizeof(size_t)
+    std::cout << "The value of count: " << count << std::endl;
+    
+    // sizeof(size_t)
     std::cout << "sizeof(size_t) : " << sizeof(size_t) << std::endl;
-    */
-
-    // Scope of the iterator
-    /*
-    for(size_t i{0} ; i < 10 ; ++i){
-        std::cout << i << " : I love C++" << std::endl;
-    }
-    std::cout << "Loop done!" << std::endl;
-    // std::cout << "i : " << i << std::endl;Compiler error : i is not in scope
-    */
-
-    size_t i{0}; // Iterator defined outside
+    
+    count = 0;
+    size_t i{}; // Iterator defined outside and empty means 0
     for (; i < 10; ++i)
     {
-        std::cout << i << " : I love C++" << std::endl;
+        count += i;
     }
-    std::cout << "Loop done!" << std::endl;
-    std::cout << "i : " << i << std::endl;
+    std::cout << "The value of count: " << count << std::endl;
+    
+    std::cout<<"------------------------While-Loop------------------------" << std::endl;
+    
+    
+    count = 0;
+    size_t j{};
+    while (j<=20)
+    {
+        count += j;
+        j++;
+    }
+    std::cout << "The value of count: " << count << std::endl;
+    
+
+    
+    std::cout<<"------------------------Do-While-Loop------------------------" << std::endl;
+
+    count = 0;
+    sig_atomic_t y{};
+    do
+    {
+        std::cout<< "Hello Noob!" << std::endl;
+        y++;
+    } while (y>20);
+    std::cout << sizeof(sig_atomic_t) << std::endl;
+    std::cout << y << std::endl;
+    
 
     return 0;
 }
