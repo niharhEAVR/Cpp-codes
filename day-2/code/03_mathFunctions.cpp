@@ -31,6 +31,8 @@ int main()
 
     // Try the reverse operation of  e^4 = 54.59 , it will be log 54.59 in base e = ?
     std::cout << "Log : to get 54.59, you would elevate e to the power of : " << std::log(54.59) << std::endl;
+    double compareValue = std::exp(4);
+    std::cout << "The compareValue of 54.59 is : " << compareValue << std::endl;
 
     // log10 , 10 ^ 4 = 10000
     std::cout << "To get 10000, you'd need to elevate 10 to the power of : " << std::log10(10000) << std::endl; // 4

@@ -8,7 +8,7 @@ int main()
     std::cout << "Enter your full name: ";
     std::getline(std::cin,fullName) >> age;
 
-    std::cout << "Your name is: " << fullName << " Your age is: " << age << std::endl;
+    std::cout << "Your name is: " << fullName << ", and Your age is: " << age << std::endl;
 
     return 0;
 }

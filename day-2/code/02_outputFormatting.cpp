@@ -7,16 +7,12 @@ int main()
     // std::setw() : Adjusts the field with for the item about to be printed.
     // The setw() manipulator only affects the next value to be printed.
 
-    std::cout << "Unformatted table : " << std::endl;
+    std::cout << "Unformatted table: " << std::endl;
     std::cout << "Daniel" << " " << "Gray" << " 25" << std::endl;
     std::cout << "Stanley" << " " << "Woods" << " 33" << std::endl;
-    std::cout << "Jordan" << " " << "Parker" << " 45" << std::endl;
-    std::cout << "Joe" << " " << "Ball" << " 21" << std::endl;
-    std::cout << "Josh" << " " << "Carr" << " 27" << std::endl;
-    std::cout << "Izaiah" << " " << "Robinson" << " 29" << std::endl;
 
     std::cout << std::endl;
-    std::cout << "Formatted table : " << std::endl;
+    std::cout << "Formatted table: " << std::endl;
 
     std::cout << std::setw(10) << "Lastname" << std::setw(10) << "Firstname" << std::setw(5) << "Age" << std::endl;
     std::cout << std::setw(10) << "Daniel" << std::setw(10) << "Gray" << std::setw(5) << "25" << std::endl;
@@ -58,12 +54,16 @@ int main()
     // Internal justified : sign is left justified , data is right justified
     std::cout << std::endl;
     std::cout << "Internal justified : " << std::endl;
-    std::cout << std::right;
-    std::cout << std::setw(10) << -123.45 << std::endl;
     std::cout << std::internal;
     std::cout << std::setw(col_width) << "Lastname" << std::setw(col_width) << "Firstname" << std::setw(col_width / 2) << "Age" << std::endl;
     std::cout << std::setw(col_width) << "Daniel" << std::setw(col_width) << "Gray" << std::internal << std::setw(col_width / 2) << -25 << std::endl;
     std::cout << std::setw(col_width) << "Stanley" << std::setw(col_width) << "Woods" << std::internal << std::setw(col_width / 2) << -33 << std::endl;
+    
+    std::cout << std::endl;
+    std::cout << std::left;
+    std::cout << std::setw(col_width) << "Lastname" << std::setw(col_width) << "Firstname" << std::setw(col_width / 2) << "Age" << std::endl;
+    std::cout << std::setw(col_width) << "Daniel" << std::setw(col_width) << "Gray" << std::setw(col_width / 2) << -25 << std::endl;
+    std::cout << std::setw(col_width) << "Stanley" << std::setw(col_width) << "Woods" << std::setw(col_width / 2) << -33 << std::endl;
 
     // setfill
     std::cout << std::endl;
