@@ -82,7 +82,6 @@ int main()
     {
         std::cerr << "WARNING : Trying to use an invalid pointer" << std::endl;
     }
-    std::cout << "Program is ending well" << std::endl;
 
     
     return 0;

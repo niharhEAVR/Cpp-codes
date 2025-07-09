@@ -246,3 +246,67 @@ Only works if array size is known or using `std::array`.
 | STL-compatible?         | ❌ No      | ✅ Yes           | ✅ Yes            |
 | Safer?                  | ❌ No      | ✅ Yes           | ✅ Yes            |
 | Preferred in modern C++ | ❌         | ✅               | ✅✅✅              |
+
+
+
+---
+---
+---
+
+
+### Let's go through both of your cases:
+
+---
+
+### ✅ Case 1:
+
+```cpp
+int families[5]{12, 7, 5};
+```
+
+This uses **brace-enclosed list initialization** (`{}`), so:
+
+* `families[0] = 12`
+* `families[1] = 7`
+* `families[2] = 5`
+* `families[3] = 0`
+* `families[4] = 0`
+
+➡️ **All unspecified elements are value-initialized to `0`** when using `{}`.
+
+---
+
+### ❓Case 2:
+
+```cpp
+int scores[5];
+scores[0] = 20;
+scores[1] = 21;
+scores[2] = 22;
+```
+
+Here, `scores` is declared **without an initializer**. This makes a big difference.
+
+* If `scores` is defined **inside a function (like `main`)**, it is a **local variable**, and its elements are **uninitialized**.
+
+  ➤ That means `scores[3]` and `scores[4]` contain **garbage values** — random, unpredictable values from memory.
+
+* If `scores` is defined **outside all functions (global scope)** or marked as `static`, then its elements are **zero-initialized**.
+
+---
+
+### 🔍 Summary:
+
+| Declaration                     | Result for Uninitialized Elements |
+| ------------------------------- | --------------------------------- |
+| `int arr[5] = {1, 2};`          | Remaining = 0                     |
+| `int arr[5] = {};`              | All = 0                           |
+| `int arr[5];` (local variable)  | Garbage values                    |
+| `static int arr[5];`            | All = 0                           |
+| `int arr[5];` (global variable) | All = 0                           |
+
+---
+
+### ✅ Recommendation:
+
+Always initialize arrays explicitly if you plan to use all elements — to avoid undefined behavior from uninitialized memory.

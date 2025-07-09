@@ -2,10 +2,10 @@
 
 int main(){
 
-    const char * message {"Hello World!"};
+    char * message {"Hello World!"};
     std::cout << "message : " << message << std::endl;
 
-    //*message = "B"; // Compiler error
+    // *message = "B"; // Compiler error, read the 04_charPointer.md to understand properly
     std::cout << "*message : " << *message << std::endl;
 
     //Allow users to modify the string (only possible by array)

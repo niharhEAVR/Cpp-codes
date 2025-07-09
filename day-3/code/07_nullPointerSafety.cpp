@@ -30,12 +30,9 @@ int main()
     delete p_number;
     p_number = nullptr;
 
-    // It is OK call delete on a nullptr
-    // Calling delete on a nullptr is OK
     int *p_number1{};
-
-    delete p_number1; // This won't cause any problem
-                      // if p_number1 contains nullptr
+    delete p_number1;
+    // It is OK call delete on a nullptr, This won't cause any problem
 
     if (p_number1 != nullptr)
     {

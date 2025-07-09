@@ -58,7 +58,6 @@ int main()
     std::cout << "*p_number2 : " << *p_number2 << std::endl;
     delete p_number2;
     // delete p_number2;
-    std::cout << "Program is ended well" << std::endl;
 
     return 0;
 }

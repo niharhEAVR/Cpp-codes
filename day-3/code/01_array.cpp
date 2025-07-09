@@ -14,8 +14,7 @@ int main()
         }
         std::cout << "[" << i << "]=" << scores[i] << ", ";
     }
-    std::cout << std::endl
-              << std::endl;
+    std::cout << std::endl << std::endl;
 
     scores[0] = 20;
     scores[1] = 21;
@@ -29,16 +28,16 @@ int main()
         }
         std::cout << "score[" << i << "]=" << scores[i] << ", ";
     }
-    std::cout << std::endl
-              << std::endl;
+    std::cout << std::endl << std::endl;
 
+
+    
     double salaries[5]{12.7, 7.5, 13.2, 8.1, 9.3};
     for (size_t i{0}; i < 5; ++i)
     {
         std::cout << "salaries[" << i << "]=" << salaries[i] << ", ";
     }
-    std::cout << std::endl
-              << std::endl;
+    std::cout << std::endl << std::endl;
 
     // If you don't initialize all the elements, those you leave out are initialized to 0
     int families[5]{12, 7, 5};
@@ -46,8 +45,7 @@ int main()
     {
         std::cout << "families[" << i << "]=" << families[i] << ", ";
     }
-    std::cout << std::endl
-              << std::endl;
+    std::cout << std::endl << std::endl;
 
     // Omit the size of the array at declaration
     int class_sizes[]{5, 12, 15, 11, 18, 17, 23, 56};
@@ -56,8 +54,7 @@ int main()
     {
         std::cout << "value : " << value << ", ";
     }
-    std::cout << std::endl
-              << std::endl;
+    std::cout << std::endl << std::endl;
 
     std::cout << "-------------size-of-arrays-------------" << std::endl;
     std::cout << sizeof(scores) << std::endl;
