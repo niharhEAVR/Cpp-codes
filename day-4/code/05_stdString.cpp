@@ -10,9 +10,13 @@ int main()
     std::string message{"Hello there", 5};
     // Initialize with part of a string literal.
     // Contains hello
+
+
     std::string weird_message(4, 'e');
     // Initialize with multiple copies of a char
     //  contains eeee
+
+    
     std::string greeting{"Hello World"};
     std::string saying_hello{greeting, 6, 5};
     // Initialize with part of an existing std::string

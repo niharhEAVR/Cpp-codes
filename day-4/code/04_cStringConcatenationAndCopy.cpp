@@ -6,7 +6,6 @@ int main()
 
     // Concatenation
     // doc : https://en.cppreference.com/w/cpp/string/byte/strcat
-
     char dest[50] = "Hello ";
     char src[50] = "World!";
     std::strcat(dest, src); // it puts the whole string to the first variable.

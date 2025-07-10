@@ -16,7 +16,7 @@ int main()
 
     // Check if character is alphabetic
     std::cout << std::endl;
-    std::cout << "C is alphabetic: " << std::isalpha('e') << std::endl;
+    std::cout << "e is alphabetic: " << std::isalpha('e') << std::endl;
     std::cout << "^ is alphabetic: " << std::isalpha('^') << std::endl;
     std::cout << "7 is alphabetic: " << std::isalpha('7') << std::endl;
 
@@ -61,10 +61,12 @@ int main()
 
     // Check if a character is a digit
     std::cout << std::endl;
-    char statement[] {"Mr Hamilton owns 221 cows. That's a lot of cows! The kid exclamed."};
+    char statement[]{"Mr Hamilton owns 221 cows. That's a lot of cows! The kid exclamed."};
     size_t digit_count{};
-    for(auto character : statement){
-        if(std::isdigit(character)){
+    for (auto character : statement)
+    {
+        if (std::isdigit(character))
+        {
             ++digit_count;
         }
     }
