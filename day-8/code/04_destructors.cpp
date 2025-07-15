@@ -13,6 +13,7 @@ private:
     std::string breed;
     int *p_age{nullptr};
 };
+
 Dog::Dog(std::string_view name_param, std::string_view breed_param, int age_param)
 {
     name = name_param;
@@ -39,7 +40,12 @@ int main()
 {
 
     some_func();
+    std::cout << std::endl;
+    some_func();
+    std::cout << std::endl;
 
-    std::cout << "Done!" << std::endl;
+    Dog dog1("Dogyy1", "Shepherd", 2);
+    Dog dog2("Dogyy2", "Shepherd", 3);
+
     return 0;
 }

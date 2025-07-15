@@ -1,9 +1,3 @@
-Perfect — you're now ready to understand **destructors**, which are just as important as constructors in C++.
-
-Let’s go step by step with **super-clear explanations**, diagrams, and code.
-
----
-
 ## ✅ What is a Destructor in C++?
 
 A **destructor** is a special function that is **automatically called** when an object is **destroyed** (goes out of scope or is deleted).
@@ -167,7 +161,3 @@ int main() {
 Constructor
 Destructor
 ```
-
----
-
-Would you like me to show you destructors **with dynamic arrays**, or how they work with **inheritance and virtual destructors**?
