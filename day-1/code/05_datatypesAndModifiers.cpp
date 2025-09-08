@@ -11,7 +11,7 @@ int main()
     // int narrowValue {3.9}; // this will give a compiletime error that we can't initialize a decimal value to a integer
 
     int value1(3.6);  // This is C++ "functional-style" initialization (looks like calling a constructor).
-    int value2 = 3.6; // This is copy initialization using the = sign.
+    int value2 = 3.6; // This is copy initialization using this (=) sign.
 
     // the value1 and value2 initialization doesn't have any diff. except the style, one is using the function style and another one is using the assignment operator
 
@@ -29,13 +29,13 @@ int main()
 
     std::cout << "--------------float----------------" << std::endl;
 
-    float x{3.88888098490f};
+    float x{123.456789123f};
     std::cout << x << std::endl;
     std::cout << std::setprecision(0) << x << std::endl;
     std::cout << std::setprecision(5) << x << std::endl;
     std::cout << std::setprecision(10) << x << std::endl;
     std::cout << std::fixed << std::setprecision(10) << x << std::endl;
-    std::cout << std::endl;
+    std::cout << std::endl; // after decimal 10 fixed values will be printed
 
     std::cout.unsetf(std::ios::fixed);
     float x2 = 32222228987890;
@@ -109,7 +109,7 @@ int main()
     bool t2{1};
     bool t3{false};
 
-    if (t)
+    if (t2)
     {
         std::cout << "Hello" << std::endl;
     }
@@ -132,6 +132,7 @@ int main()
     auto v2{2.90f};
     auto v3{2.890l};
     auto v4{'e'};
+    v4 = 'a';
 
     auto v5{334u};
     v5 = -889;
@@ -140,6 +141,7 @@ int main()
     std::cout << sizeof(v2) << std::endl;
     std::cout << sizeof(v3) << std::endl;
     std::cout << sizeof(v4) << std::endl;
+    std::cout << v4 << std::endl;
     std::cout << v5 << std::endl;
 
 

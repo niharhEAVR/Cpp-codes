@@ -44,19 +44,19 @@ int a = b = c = 5;
 
 ### ✅ Quick Table (Common Operators)
 
-| Operator(s)       | Description           | Precedence | Associativity |       |               |
-| ----------------- | --------------------- | ---------- | ------------- | ----- | ------------- |
-| `()` `[]` `.`     | Function/array/member | Highest    | Left to Right |       |               |
-| `!` `++` `--` `-` | Unary operators       | High       | Right to Left |       |               |
-| `*` `/` `%`       | Multiplicative        | Medium     | Left to Right |       |               |
-| `+` `-`           | Additive              | Medium     | Left to Right |       |               |
-| `<<` `>>`         | Bitwise shift         | Lower      | Left to Right |       |               |
-| `<` `<=` `>` `>=` | Relational            | Lower      | Left to Right |       |               |
-| `==` `!=`         | Equality              | Lower      | Left to Right |       |               |
-| `&&`              | Logical AND           | Lower      | Left to Right |       |               |
-| \`                |                       | \`         | Logical OR    | Lower | Left to Right |
-| `=`, `+=`, `-=`   | Assignment            | Low        | Right to Left |       |               |
-| `,`               | Comma                 | Lowest     | Left to Right |       |               |
+| Operator(s)       | Description           | Precedence | Associativity |  
+| ----------------- | --------------------- | ---------- | ------------- |
+| `()` `[]` `.`     | Function/array/member | Highest    | Left to Right |
+| `!` `++` `--` `-` | Unary operators       | High       | Right to Left |
+| `*` `/` `%`       | Multiplicative        | Medium     | Left to Right |
+| `+` `-`           | Additive              | Medium     | Left to Right |
+| `<<` `>>`         | Bitwise shift         | Lower      | Left to Right |
+| `<` `<=` `>` `>=` | Relational            | Lower      | Left to Right |
+| `==` `!=`         | Equality              | Lower      | Left to Right |
+| `&&`              | Logical AND           | Lower      | Left to Right |
+| \`                | Logical OR            | Lower      | Left to Right |
+| `=`, `+=`, `-=`   | Assignment            | Low        | Right to Left |
+| `,`               | Comma                 | Lowest     | Left to Right |
 
 ---
 

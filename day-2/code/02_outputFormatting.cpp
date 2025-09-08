@@ -4,7 +4,7 @@
 int main()
 {
 
-    // std::setw() : Adjusts the field with for the item about to be printed.
+    // std::setw() : Adjusts the field with for the characters about to be printed.
     // The setw() manipulator only affects the next value to be printed.
 
     std::cout << "Unformatted table: " << std::endl;
@@ -123,7 +123,7 @@ int main()
 
     
     // uppercase and nouppercase
-    //  here just the hex numbers gets uppercase
+    // here just the hex numbers gets uppercase
     pos_int = 717171;
 
     std::cout << std::endl;

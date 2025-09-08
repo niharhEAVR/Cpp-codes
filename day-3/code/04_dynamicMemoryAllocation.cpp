@@ -40,24 +40,24 @@ int main()
     delete p_number2;
     p_number2 = nullptr;
 
-    delete p_number3;
+    delete[] p_number3;
     p_number3 = nullptr;
 
-    delete p_number4;
+    delete[] p_number4;
     p_number4 = nullptr;
 
     // Can reuse pointers
     p_number2 = new int(81);
     std::cout << "*p_number : " << *p_number2 << std::endl;
 
-    delete p_number2;
+    delete[] p_number2;
     p_number2 = nullptr;
 
     // Calling delete twice on a pointer : BAD!
     p_number2 = new int(99);
     std::cout << "*p_number2 : " << *p_number2 << std::endl;
-    delete p_number2;
-    // delete p_number2;
+    delete[] p_number2;
+    // delete[] p_number2;
 
     return 0;
 }

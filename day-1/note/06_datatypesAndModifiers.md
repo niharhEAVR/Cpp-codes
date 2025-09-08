@@ -89,7 +89,7 @@ So even if you ask for 10 digits, it can't give what it doesn't have.
 
 ---
 
-## 🔧 Fix it with `std::fixed`:
+## 🔧 What is `std::fixed`:
 
 Now, if you want **exactly 10 digits after the decimal**, use `std::fixed`:
 
