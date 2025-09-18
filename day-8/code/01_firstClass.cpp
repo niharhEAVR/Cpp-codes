@@ -9,11 +9,7 @@ public:
     //  Publically accessable member var
     double height{};
 
-    Cylinder()
-    {
-        base_radius = 2.0;
-        height = 2.0;
-    }
+    Cylinder() = default;
 
     Cylinder(double rad_param, double height_param)
     {
@@ -54,7 +50,7 @@ int main()
     cylinder1.height = 3;
     std::cout << "volume of c1: " << cylinder1.volume() << std::endl;
 
-    Cylinder cylinder2(6.9, 9.11);
+    Cylinder cylinder2(1, 1);
     std::cout << "volume of c2: " << cylinder2.volume() << std::endl;
 
     Cylinder cylinder3;

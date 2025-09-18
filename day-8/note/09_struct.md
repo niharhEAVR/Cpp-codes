@@ -197,34 +197,95 @@ public:
 
 ### 🔹 2. `void print_point(const Point &point)`
 
-This is a function that:
+### i. `Point`
 
-* Takes a `Point` as a **const reference** (`const Point&`)
-* **Does not copy** the `Point` (saves performance)
-* **Prevents accidental modification** (because it's `const`)
+* `Point` is your `struct` type:
+
+  ```cpp
+  struct Point {
+      double x;
+      double y;
+  };
+  ```
+* So `Point` is just a **custom data type** holding two doubles (`x` and `y`).
+
+
+### ii. `const Point &point`
+
+This means **“a reference to a constant Point object.”**
+
+* **`&` (reference)**
+  Instead of copying the entire `Point` into the function, we just pass a reference (an alias).
+
+  * If `point1` is `Point {10, 55.5}`, then inside the function, `point` refers directly to `point1`.
+  * No copy happens → **more efficient**.
+
+* **`const` (constant)**
+  Means the function **cannot modify** the `Point` object passed in.
+
+  * So inside `print_point`, you can read `point.x` and `point.y`,
+  * but you **cannot assign** new values like `point.x = 50;`.
+  * This ensures **safety**: caller knows their object won’t be changed.
+
+👉 So `const Point& point` is basically:
+
+> “Give me a reference to your `Point` so I can look at it without making a copy, and I promise I won’t modify it.”
+
+
+### iii. Why not just `Point point`?
+
+If you wrote:
 
 ```cpp
-void print_point(const Point &point)
+void print_point(Point point);
 ```
 
-* `point` is a **reference** to the original object.
-* The function only **reads** data (safe, efficient).
+* It would **make a copy** of the whole `Point` when calling the function.
+* For small structs like `Point` (only 2 doubles), that’s not terrible.
+* But for large objects (like `std::string`, `std::vector`), copying is **expensive**.
+* That’s why C++ best practice is **pass by const reference**.
 
-Inside:
+
+### iv. Why not `Point& point` (without const)?
 
 ```cpp
-std::cout << "Point [ x: " << point.x << ", y : " << point.y << "]" << std::endl;
+void print_point(Point& point);
 ```
 
-It prints the `x` and `y` values from the passed-in `Point`.
+* That would also avoid the copy, but now the function **can change the caller’s object**.
+* Example:
+
+  ```cpp
+  void print_point(Point& point) {
+      point.x = 999;  // modifies original
+  }
+  ```
+* But since you only want to *print* the values, not modify them, you use `const`.
+
+
+### ✅ In your code
+
+```cpp
+print_point(point1);
+```
+
+* `point1` is passed **by const reference** into the function.
+* The function reads and prints its values.
+* No copy, no modification.
+
+
+🔑 **Summary**
+
+* `const Point&` → efficient + safe way to pass objects.
+* Function can only read, not modify.
+* Avoids unnecessary copying.
+
 
 ---
 
 ### 🔹 3. `print_point(point1);`
 
 This line **calls the function** and passes a `Point` object called `point1`.
-
-But ⚠️ your code doesn’t show where `point1` was defined. So for this to compile and work correctly, you need:
 
 ```cpp
 int main()
@@ -236,59 +297,3 @@ int main()
 
 Now this works as expected.
 
----
-
-### 🔍 What is really happening in memory?
-
-#### Given:
-
-```cpp
-Point point1{10.5, 20.2};
-```
-
-Memory layout:
-
-| Variable | Type     | Value |
-| -------- | -------- | ----- |
-| point1.x | `double` | 10.5  |
-| point1.y | `double` | 20.2  |
-
-When passed to `print_point`, C++:
-
-* Creates a **reference to `point1`**
-* Passes that reference into the function
-* Accesses `point.x` and `point.y` safely without copying
-
----
-
-## ✅ Why use `const Point&`?
-
-| Option                   | Pros                            | Cons                            |
-| ------------------------ | ------------------------------- | ------------------------------- |
-| `Point point` (by value) | Simple                          | Makes a full copy of the object |
-| `Point& point`           | No copy                         | Allows modification (unsafe)    |
-| `const Point& point` ✅   | No copy, no modification (best) | Safe and efficient              |
-
----
-
-## 🧪 Output Example:
-
-```cpp
-Point point1{10.5, 20.2};
-print_point(point1);
-```
-
-### Output:
-
-```
-Point [ x: 10.5, y : 20.2 ]
-```
-
----
-
-## ✅ Final Summary
-
-* You defined a `struct` called `Point`.
-* You created a function `print_point` that takes a **const reference** to avoid copying.
-* You passed a `Point` object `point1` into the function.
-* The function safely reads and prints its values.

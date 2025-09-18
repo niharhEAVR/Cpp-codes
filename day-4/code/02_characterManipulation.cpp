@@ -10,7 +10,7 @@ int main()
     // Can use this as a test condition
     char input_char{'*'};
     if (std::isalnum(input_char))
-        std::cout << input_char << " is alhpanumeric." << std::endl;
+        std::cout << input_char << " is alphanumeric." << std::endl;
     else
         std::cout << input_char << " is not alphanumeric." << std::endl;
 

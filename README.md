@@ -5,3 +5,5 @@ g++ name.cpp -o name
 
 .\name
 ```
+
+### Upto day-8 revise done

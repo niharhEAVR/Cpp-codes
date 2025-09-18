@@ -33,7 +33,7 @@ void some_func()
 {
     Dog *p_dog = new Dog("Fluffy", "Shepherd", 2);
 
-    delete p_dog; // Causes for the destructor of Dog to be called
+    delete p_dog; // It will called the destructor of Dog
 }
 
 int main()

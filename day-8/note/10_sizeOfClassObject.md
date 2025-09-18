@@ -112,32 +112,57 @@ std::cout << "sizeof(Dog) : " << sizeof(dog1) << std::endl;
 
 ---
 
-### 🔷 std::string Example
 
 ```cpp
-std::string name{"I am the king of the universe!"};
-std::cout << "sizeof(name) : " << sizeof(name) << std::endl;
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string name{"I am the king of the universe!"};
+
+    std::cout << "sizeof(name) : " << sizeof(name) << std::endl;
+}
 ```
 
-### ❗ Key Point:
 
-* `std::string` uses **dynamic memory** to hold the characters.
-* But `sizeof(name)` returns only the size of the string **object itself**, not the full string in memory.
+### 🔹 What happens here?
 
-#### On most systems:
+* `name` is an object of type `std::string`.
+* `sizeof(name)` gives you the size of the **`std::string` object itself**, **not** the length of the text it stores.
+
+⚠️ That’s the key:
+
+* `std::string` doesn’t store all characters directly inside itself.
+* It usually stores a **pointer to heap memory**, plus some bookkeeping info (length, capacity).
+
+So the `sizeof` just measures that internal structure.
+
+
+### 🔹 Typical output
+
+On most 64-bit systems, `sizeof(std::string)` is **24** or **32** bytes (depends on compiler and implementation).
+
+For example:
+
+* GCC/libstdc++ (Linux) → 32 bytes
+* MSVC (Windows) → 32 bytes
+* Clang/libc++ → 24 bytes
+
+Even though your text `"I am the king of the universe!"` has **30 characters**, `sizeof(name)` won’t be 30 — it’ll be a fixed small number like 24 or 32.
+
+### 🔹 To get actual string length:
 
 ```cpp
-sizeof(std::string) == 32 // Typical on 64-bit
+std::cout << "name.size() : " << name.size() << std::endl;
 ```
 
-Why?
+That would print **30**, the number of characters in the string.
 
-* Internally, `std::string` often holds:
 
-  * Pointer to dynamic char buffer
-  * Size
-  * Capacity
-* These 3 parts = 3 \* 8 bytes = 24 or 32 bytes (with padding).
+✅ So:
+
+* `sizeof(name)` → memory footprint of the `std::string` object itself.
+* `name.size()` → number of characters stored in the string.
 
 ---
 

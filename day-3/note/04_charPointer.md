@@ -1,16 +1,69 @@
-Great question — you're almost there! Let's break down what's happening step by step:
+You wrote:
+
+```cpp
+char * message {"Hello World!"};
+std::cout << "message : " << message << std::endl;
+std::cout << "size of the message pointer : " << sizeof(message) << std::endl;
+```
 
 ---
 
-### ✅ This line:
+### 1. `char * message {"Hello World!"};`
 
-```cpp
-char* message {"Hello World!"};
+* `"Hello World!"` is a **string literal** in C++.
+* String literals are stored as `const char[N]` arrays (where `N` is length including `\0`).
+  Here, `"Hello World!"` → `const char[13]` (`12` characters + `\0`).
+* When you assign to `char *`, the array **decays into a pointer** to its first element.
+  So:
+
+  ```cpp
+  message → points to the first character 'H' of "Hello World!"
+  ```
+
+  ⚠️ Technically, assigning string literals to non-`const char*` is deprecated in C++ (better use `const char*`).
+
+---
+
+### 2. `std::cout << "message : " << message << std::endl;`
+
+* `std::cout` sees `message` is a `char*`.
+* For `char*`, `operator<<` treats it as a **C-string** and prints until it finds the terminating `\0`.
+* So it prints:
+
+  ```
+  message : Hello World!
+  ```
+
+---
+
+### 3. `std::cout << "size of the message pointer : " << sizeof(message) << std::endl;`
+
+* `sizeof(message)` does **NOT** give the length of the string.
+* `message` is a pointer (`char*`), so `sizeof(message)` = **size of a pointer type**.
+* On:
+
+  * **32-bit system** → usually `4`
+  * **64-bit system** → usually `8`
+* It doesn’t matter how long the string literal is; the pointer size is fixed.
+
+---
+
+✅ **Output (on a 64-bit system)**:
+
+```
+message : Hello World!
+size of the message pointer : 8
 ```
 
-* `"Hello World!"` is a **string literal**, which is **constant** in C++.
-* So `message` is a pointer to a **read-only** block of memory containing `"Hello World!"`.
-* Even though the pointer type is `char*`, you're pointing to **immutable** memory.
+---
+
+👉 If you wanted the length of the string, you’d use:
+
+```cpp
+std::cout << strlen(message) << std::endl;  // prints 12
+```
+
+---
 
 > ❗ In modern C++, you should write this as:
 

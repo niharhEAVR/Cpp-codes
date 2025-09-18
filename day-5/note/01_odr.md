@@ -1,7 +1,3 @@
-Perfect question! You're thinking in the right direction. Let’s go step-by-step and answer your doubt **clearly and simply**:
-
----
-
 ### 💡 First, what is a file in C++?
 
 When you write a C++ program, it often has:
