@@ -6,4 +6,21 @@ g++ name.cpp -o name
 .\name
 ```
 
-### Upto day-8 revise done
+---
+
+### How to run multiple file in direct main file:
+
+```sh
+
+cd .\day-9\code\01_FirstTryOnInheritance
+
+g++ main.cpp person.cpp player.cpp nurse.cpp engineer.cpp -o rooter
+
+.\rooter.exe
+
+```
+
+
+---
+
+# Upto 24:47:06 form freeCodeCamp.org c++ video is complete
